@@ -12,10 +12,6 @@ books = [
         ]
 
 class TestBooksCollector:
-    def test_add_new_book_second_add_existing_book_no_replacing_genre(self, comedy_books_collector):
-        comedy_books_collector.add_new_book(books_comedy_genre[0][0])
-        assert comedy_books_collector.get_book_genre(books_comedy_genre[0][0]) == books_comedy_genre[0][1]
-
     @pytest.mark.parametrize(
         'book, genre', books
     )
@@ -88,6 +84,10 @@ class TestBooksCollector:
     def test_add_new_book_just_added_book_has_no_genre(self, books_collector):
         books_collector.add_new_book(books[0][0])
         assert len(books_collector.books_genre[books[0][0]]) == 0
+
+    def test_add_new_book_second_add_existing_book_no_replacing_genre(self, comedy_books_collector):
+        comedy_books_collector.add_new_book(books_comedy_genre[0][0])
+        assert comedy_books_collector.get_book_genre(books_comedy_genre[0][0]) == books_comedy_genre[0][1]
 
     @pytest.mark.parametrize(
         'book_wrong_len',
