@@ -1,7 +1,6 @@
 import pytest
-from conftest import books_comedy_genre
 
-from main import BooksCollector
+from conftest import books_comedy_genre
 
 books = [
             ['Автостопом по галактие', 'Фантастика'],
