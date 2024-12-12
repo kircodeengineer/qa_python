@@ -20,13 +20,6 @@ class TestBooksCollector:
         books_collector.set_book_genre(book, genre)
         assert books_collector.books_genre[book] == genre
 
-    def test_set_book_genre_not_existing_genre_cant_be_set(self,books_collector):
-        book = "Звёздная пыль"
-        genre = "Фэнтези"
-        books_collector.add_new_book(book)
-        books_collector.set_book_genre(book, genre)
-        assert books_collector.books_genre[book] != genre
-
     @pytest.mark.parametrize(
         'book, genre', books
     )
@@ -84,6 +77,13 @@ class TestBooksCollector:
     def test_add_new_book_just_added_book_has_no_genre(self, books_collector):
         books_collector.add_new_book(books[0][0])
         assert len(books_collector.books_genre[books[0][0]]) == 0
+
+    def test_set_book_genre_not_existing_genre_cant_be_set(self,books_collector):
+        book = "Звёздная пыль"
+        genre = "Фэнтези"
+        books_collector.add_new_book(book)
+        books_collector.set_book_genre(book, genre)
+        assert books_collector.books_genre[book] != genre
 
     def test_add_new_book_second_add_existing_book_no_replacing_genre(self, comedy_books_collector):
         comedy_books_collector.add_new_book(books_comedy_genre[0][0])

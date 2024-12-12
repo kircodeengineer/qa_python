@@ -3,8 +3,6 @@
 
 test_set_book_genre_existing_genre_can_be_set - добавляемым книгам присваивается жанр
 
-test_set_book_genre_not_existing_genre_cant_be_set - добавляемым книгам не присваивается несуществующий в БД жанр
-
 test_get_book_genre_returns_added_book_with_existing_genre - названию книги возвращается жанр, существующий в БД
 
 test_get_books_with_specific_genre_for_added_books_with_existing_genre - возвращается список книг заданного жанра, существующего в БД
@@ -26,6 +24,8 @@ test_get_books_with_specific_genre_without_add_return_empty_list - возвра�
 test_get_books_for_children_only_children_books - книги с возрастным рейтингом отсутствуют в списке книг для детей
 
 test_add_new_book_just_added_book_has_no_genre - у добавленной книги нет жанра
+
+test_set_book_genre_not_existing_genre_cant_be_set - добавляемым книгам не присваивается несуществующий в БД жанр
 
 test_add_new_book_second_add_existing_book_no_replacing_genre - повторное добавление книги не перезаписывает её жанр
 
