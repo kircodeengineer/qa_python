@@ -12,15 +12,6 @@ books = [
         ]
 
 class TestBooksCollector:
-    @pytest.mark.parametrize(
-        'book_wrong_len',
-        ["",
-         "12345678901234567890123456789012345678901"]
-    )
-    def test_add_new_book_wrong_book_len_no_book_in_books_collector(self, books_collector, book_wrong_len):
-        books_collector.add_new_book(book_wrong_len)
-        assert book_wrong_len not in books_collector.books_genre
-
     def test_add_new_book_second_add_existing_book_no_replacing_genre(self, comedy_books_collector):
         comedy_books_collector.add_new_book(books_comedy_genre[0][0])
         assert comedy_books_collector.get_book_genre(books_comedy_genre[0][0]) == books_comedy_genre[0][1]
@@ -97,3 +88,12 @@ class TestBooksCollector:
     def test_add_new_book_just_added_book_has_no_genre(self, books_collector):
         books_collector.add_new_book(books[0][0])
         assert len(books_collector.books_genre[books[0][0]]) == 0
+
+    @pytest.mark.parametrize(
+        'book_wrong_len',
+        ["",
+         "12345678901234567890123456789012345678901"]
+    )
+    def test_add_new_book_wrong_book_len_no_book_in_books_collector(self, books_collector, book_wrong_len):
+        books_collector.add_new_book(book_wrong_len)
+        assert book_wrong_len not in books_collector.books_genre

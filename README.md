@@ -1,8 +1,5 @@
-# qa-python
+# qa_python
 Учебный проект курса Яндекс. Практикум
-
-
-test_add_new_book_wrong_book_len_no_book_in_books_collector - не добавляются книги 0 и 41 символ
 
 test_add_new_book_second_add_existing_book_no_replacing_genre - повторное добавление книги не перезаписывает её жанр
 
@@ -31,3 +28,5 @@ test_get_books_with_specific_genre_without_add_return_empty_list - возвра�
 test_get_books_for_children_only_children_books - книги с возрастным рейтингом отсутствуют в списке книг для детей
 
 test_add_new_book_just_added_book_has_no_genre - у добавленной книги нет жанра
+
+test_add_new_book_wrong_book_len_no_book_in_books_collector - не добавляются книги 0 и 41 символ
