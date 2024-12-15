@@ -11,8 +11,6 @@ test_get_book_genre_empty_books_genre - возвращается пустой с
 
 test_get_books_genre_add_cartoon_genre_returns_cartoon_genre - возврается словарь книг заданного жанра
 
-test_get_books_for_children_return_all_added_comedy_books - возврается список детских книг жанра Комедия
-
 test_add_book_in_favorites_after_add_one_book_favorites_contains_list_of_one_book - в БД список любимых книг из одной добавленной книги
 
 test_get_list_of_favorites_books_after_add_one_favorite_book_returns_list_with_one_added_book - возвращается список любимых книг из одной добавленной книги
