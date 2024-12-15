@@ -46,8 +46,9 @@ class TestBooksCollector:
         for book, genre in books:
             books_collector.add_new_book(book)
             books_collector.set_book_genre(book, genre)
-        books_collector.add_book_in_favorites(books[0][0])
-        assert books_collector.favorites == [books[0][0]]
+        favorite_book = books[0][0]
+        books_collector.add_book_in_favorites(favorite_book)
+        assert books_collector.favorites == [favorite_book]
 
     def test_get_list_of_favorites_books_after_add_one_favorite_book_returns_list_with_one_added_book(self, books_collector):
         for book, genre in books:
@@ -78,8 +79,9 @@ class TestBooksCollector:
                                                             books[4][0]]
 
     def test_add_new_book_just_added_book_has_no_genre(self, books_collector):
-        books_collector.add_new_book(books[0][0])
-        assert len(books_collector.books_genre[books[0][0]]) == 0
+        book = books[0][0]
+        books_collector.add_new_book(book)
+        assert len(books_collector.books_genre[book]) == 0
 
     def test_set_book_genre_not_existing_genre_cant_be_set(self,books_collector):
         book = "Звёздная пыль"
